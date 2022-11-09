@@ -15,9 +15,13 @@ describe('User Service', () => {
 
   describe('root', () => {
     it('should create users', () => {
-      expect(
-        userService.createUser({ email: 'test@gmail.com', age: 22 }).userId,
-      ).toBeTruthy();
+      const newUser = userService.createUser({
+        email: 'test@gmail.com',
+        age: 22,
+      });
+
+      expect(newUser.userId).toBeTruthy();
+      expect(newUser.age).toBe(22);
     });
   });
 });
